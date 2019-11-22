@@ -1,4 +1,5 @@
 DART="dart"
+PUB="pub"
 DART_COMPILER="dart2native"
 
 BUILDS_DIR="builds"
@@ -16,8 +17,8 @@ main: detail pub
 	@echo Done!
 
 pub:
-	@pub get
-	@echo
+	@${PUB} get
+	@echo ========================================
 
 run:
 	@${DART} --packages=./.packages \
@@ -26,4 +27,4 @@ run:
 detail:
 	@echo PROJECT_NAME ${PROJECT_NAME}
 	@echo PROJECT_VERSION ${PROJECT_VERSION}
-	@echo
+	@echo ========================================

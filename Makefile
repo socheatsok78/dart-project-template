@@ -1,3 +1,4 @@
+DART="dart"
 DART_COMPILER="dart2native"
 
 PROJECT_NAME=$(shell cat pubspec.yaml | grep name | awk '{print $$2}')
@@ -11,6 +12,10 @@ main: detail
 	@echo Make application executable...
 	@chmod +x build/${PROJECT_NAME}
 	@echo Done!
+
+run:
+	@${DART} --packages=./.packages \
+		package:${PROJECT_NAME}/main.dart
 
 detail:
 	@echo PROJECT_NAME ${PROJECT_NAME}

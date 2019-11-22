@@ -1,16 +1,18 @@
 DART="dart"
 DART_COMPILER="dart2native"
 
+BUILDS_DIR="builds"
+
 PROJECT_NAME=$(shell cat pubspec.yaml | grep name | awk '{print $$2}')
 PROJECT_VERSION=$(shell cat pubspec.yaml | grep version | awk '{print $$2}')
 
 main: detail
 	@echo Building application...
 	@${DART_COMPILER} \
-		-o build/${PROJECT_NAME} \
+		-o ${BUILDS_DIR}/${PROJECT_NAME} \
 		lib/main.dart
 	@echo Make application executable...
-	@chmod +x build/${PROJECT_NAME}
+	@chmod +x ${BUILDS_DIR}/${PROJECT_NAME}
 	@echo Done!
 
 run:

@@ -1,5 +1,6 @@
 ### Dart ###
 .packages
+.dart_tool/
 pubspec.lock
 
 # Created by https://www.gitignore.io/api/osx
